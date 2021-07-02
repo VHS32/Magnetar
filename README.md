@@ -8,9 +8,11 @@
 <br /> 3. Overwrite 10 sectors of \\\\.\\C:.
 <br /> 4. Mark process as critical.
 <br /> 5. Terminate some processes and suspend explorer.exe (to avoid user refresh or open program).
-<br /> 6. GDI messes and play noises sounds.
-<br /> 7. Crasing the system by calling emergency shutdown using `NtShutdownSystem` or BSOD by terminating critical process.
-<br /> 8. MBR.
+<br /> 6. Restrict some applications.
+<br /> 7. Launch process to delete entire System32.
+<br /> 8. GDI messes and play noises sounds.
+<br /> 9. Crasing the system by calling emergency shutdown using `NtShutdownSystem` or BSOD by terminating critical process.
+<br /> 10. MBR.
 
 # Download and Source code
 <br /> Download: See Releases.
