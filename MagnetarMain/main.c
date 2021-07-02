@@ -31,7 +31,7 @@ DWORD rng(void)
 	return z ^= z >> 16;
 }
 
-static DWORD FindProcessID(LPCWSTR lpProcessName) 
+DWORD FindProcessID(LPCWSTR lpProcessName) 
 {
 	HANDLE hProcessSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 	PROCESSENTRY32W procEntry;
@@ -48,7 +48,7 @@ static DWORD FindProcessID(LPCWSTR lpProcessName)
 	CloseHandle(hProcessSnapshot);
 }
 
-static void SuspendProcessID(DWORD dwProcessID)
+void SuspendProcessID(DWORD dwProcessID)
 {
 	HANDLE hThreadSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
 	THREADENTRY32 threadEntry;
@@ -67,7 +67,7 @@ static void SuspendProcessID(DWORD dwProcessID)
 	CloseHandle(hThreadSnapshot);
 }
 
-static void TerminateProcessName(LPCWSTR lpProcessname)
+void TerminateProcessName(LPCWSTR lpProcessname)
 {
 	HANDLE hProcessSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 	PROCESSENTRY32W prcs;
