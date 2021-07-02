@@ -135,7 +135,7 @@ DWORD WINAPI magnetargdipayloads(_In_ LPVOID lpParam)
 	int height;
 	int iconx;
 	int icony;
-	HICON error = LoadIconW(NULL, IDI_ERROR);
+	HICON error;
 	HWND hwnd;
 	HDC desktop;
 	HDC hdc;
