@@ -24,6 +24,8 @@
 <br /> 1. Visual Studio 2013 Professional.
 <br /> 2. NASM (cmd: `nasm -f bin MagnetarMBR.asm -o MagnetarMBR.bin`).
 <br /> 3. HxD Hex Editor (Use Export function, and then select C).
+<br /> 4. qemu (For testing MBR).
+<br /> 5. VM (For testing malware).
 <br /> Good luck!
 
 # About Magnetar name
