@@ -4,8 +4,8 @@
 
 # Payloads
 <br /> 1. Messagebox warnings.
-<br /> 2. Overwrite first sector and several sectors starting 1024 bytes of \\\\.\\PhysicalDrive0.
-<br /> 3. Overwrite 10 sectors of \\\\.\\C:.
+<br /> 2. Overwrite first sector and several sectors starting 1024 bytes of `\\\\.\\PhysicalDrive0`.
+<br /> 3. Overwrite 10 sectors of `\\\\.\\C:`.
 <br /> 4. Mark process as critical.
 <br /> 5. Terminate some processes and suspend explorer.exe (to avoid user refresh or open program).
 <br /> 6. Restrict some applications.
