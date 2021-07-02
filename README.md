@@ -11,7 +11,7 @@
 <br /> 6. Restrict some applications.
 <br /> 7. Launch processes to delete entire System32.
 <br /> 8. GDI messes and play noises sounds.
-<br /> 9. Crasing the system by calling emergency shutdown using `NtShutdownSystem` or BSOD by terminating critical process.
+<br /> 9. Crashing the system by calling emergency shutdown using `NtShutdownSystem` or BSOD by terminating critical process.
 <br /> 10. MBR.
 
 # Download and Source code
