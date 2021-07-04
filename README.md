@@ -15,9 +15,7 @@
 <br /> 10. MBR.
 
 # Download and Source code
-<br /> Download: See Releases or [Download](https://github.com/Nathantor/Magnetar/releases/download/1/Magnetar.zip).
-<br /> Password: 6656.
-<br /> Note: Download link will removed on June 6 2021 10.00 AM (UTC+7)
+<br /> Download: Deleted (for safety reasons).
 <br /> Source code: See above.
 
 # Requirements to compile
