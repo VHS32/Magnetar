@@ -5,7 +5,7 @@
 # Rewrite version
 <br /> Updates:
 <br /> 1. Move the language from C to C++.
-<br /> 2. Adding and fixing some payloads.
+<br /> 2. Adding and fixing some GDI payloads.
 <BR /> 3. Change the rng (Random numbers generator) from Splitmix32 to Mulberry32 (I little trust to Mulberry32 since passes gjrand's 13 tests with no failures).
 
 # Payloads
