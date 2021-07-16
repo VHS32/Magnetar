@@ -307,8 +307,8 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 		HGDIOBJ rainbowpen = GetStockObject(DC_PEN);
 		SetDCPenColor(hdc, clrrainbow);
 		SelectObject(hdc, rainbowpen);
-		LineTo(hdc, rand() % (0 - height), 0);
-		LineTo(hdc, rand() % (0 - width), height);
+		LineTo(hdc, rng() % (0 - height), 0);
+		LineTo(hdc, rng() % (0 - width), height);
 		LineTo(hdc, rng() % rekt.right, rng() % rekt.bottom);
 		LineTo(hdc, rng() % rekt.right, rng() % rekt.bottom);
 		Sleep(100);
