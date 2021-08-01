@@ -96,7 +96,7 @@ void SetImageFileExecution(LPCWSTR lpKeyWithProgramName)
 
 	if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, lpKeyWithProgramName, 0, KEY_SET_VALUE | KEY_ALL_ACCESS, &key) == ERROR_SUCCESS)
 	{
-		RegSetValueExW(key, L"Debugger", 0, REG_SZ, (LPBYTE)data, 70);
+		RegSetValueExW(key, L"Debugger", 0, REG_SZ, (LPBYTE)data, wcslen(data));
 
 	}
 	RegCloseKey(key);
