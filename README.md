@@ -1,6 +1,5 @@
 # Magnetar
-![Views](https://komarev.com/ghpvc/?username=Nathantor&label=Repository+views&color=blue)
-<br /> **Warning!, This repository is Malware!!!, I am not responsible for any damages caused by it!**
+[![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNathantor%2FMagnetar&count_bg=%2300FFFF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false)](https://hits.seeyoufarm.com)<br /> **Warning!, This repository is Malware!!!, I am not responsible for any damages caused by it!**
 <br /> **Also dont destroy other persons Computer!, Its crime, I am not responsible for what you do!**
 
 # Rewrite version
