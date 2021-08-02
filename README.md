@@ -1,4 +1,5 @@
 # Magnetar
+![Views](https://komarev.com/ghpvc/?username=Nathantor&label=Repository+views&color=blue)
 <br /> **Warning!, This repository is Malware!!!, I am not responsible for any damages caused by it!**
 <br /> **Also dont destroy other persons Computer!, Its crime, I am not responsible for what you do!**
 
