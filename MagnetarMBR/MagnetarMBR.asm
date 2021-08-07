@@ -1,7 +1,5 @@
-;crap mbr lol
-
-BITS 16
-ORG 0x7C00
+bits 16
+org 0x7C00
 
     xor al, al
     xor bx, bx
