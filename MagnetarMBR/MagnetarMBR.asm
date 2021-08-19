@@ -1,5 +1,5 @@
 bits 16
-org 0x7C00
+org 0x7c00
 
     xor al, al
     xor bx, bx
@@ -7,9 +7,9 @@ org 0x7C00
 	
     rainbow:
     mov ah, 0x09
-    int 10h
+    int 0x10
     mov ah, 0x0e
-    int 10h
+    int 0x10
 	
 	inc al
 	inc bl
