@@ -1,7 +1,7 @@
 bits 16 ; Bootloader using 16 bits.
 org 0x7c00 ; BIOS magic number.
 
-    ; Set video graphic.
+    ; Preparing.
     xor al, al
     xor bx, bx
     mov cx, 0x01
@@ -14,7 +14,7 @@ repeat: ;repeat entry point.
     mov ah, 0x0e
     int 0x10
     
-    ; Incrementing some register to generate random character and color (CMIIW).
+    ; Increment some register to generate random color and character (CMIIW).
     inc al
     inc bl
     inc cl
