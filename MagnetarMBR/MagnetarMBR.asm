@@ -1,7 +1,7 @@
 bits 16 ; Bootloader using 16 bits.
 org 0x7c00 ; BIOS magic number.
 
-    ;Clear screen + set position.
+    ; Clear screen + set position.
     xor al, al
     xor bx, bx
     mov cx, 0x01
@@ -23,7 +23,7 @@ repeat: ;repeat entry point.
     inc bh
     inc ch
 
-    ; Jump again to repeat entry point (loops).
+    ; Jump to repeat entry point (loops).
     jmp repeat
  
 times 510-($-$$) db 0 ; Fill until reach 510b.
