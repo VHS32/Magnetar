@@ -8,7 +8,7 @@ org 0x7c00 ; BIOS magic number.
 	
 repeat: ;repeat entry point.
 
-    ; Print color and txt.
+    ; Print color and character.
     mov ah, 0x09
     int 0x10
     mov ah, 0x0e
