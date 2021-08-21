@@ -10,14 +10,14 @@ org 0x7c00
     int 0x10
     mov ah, 0x0e
     int 0x10
+
+    inc al
+    inc bl
+    inc cl
 	
-	inc al
-	inc bl
-	inc cl
-	
-	inc ah
-	inc bh
-	inc ch
+    inc ah
+    inc bh
+    inc ch
 
     jmp rainbow
  
