@@ -27,4 +27,4 @@ repeat: ;repeat entry point.
     jmp repeat
  
 times 510-($-$$) db 0 ; Fill until reach 510b.
-dw 0xAA55 ; 2b mbr signature.
+dw 0xaa55 ; 2b mbr signature.
