@@ -1,7 +1,7 @@
 bits 16 ; Bootloader using 16 bits.
 org 0x7c00 ; BIOS magic number.
 
-    ; Clear screen + set position.
+    ; Set video graphic.
     xor al, al
     xor bx, bx
     mov cx, 0x01
