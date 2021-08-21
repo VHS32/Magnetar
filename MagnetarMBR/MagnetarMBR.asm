@@ -14,7 +14,7 @@ repeat: ;repeat entry point.
     mov ah, 0x0e
     int 0x10
     
-    ; Incrementing some register to generate random character and color (i little forgot about that).
+    ; Incrementing some register to generate random character and color (CMIIW).
     inc al
     inc bl
     inc cl
