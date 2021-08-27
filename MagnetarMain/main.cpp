@@ -22,6 +22,7 @@ void srng(DWORD dwSeed)
 	state = dwSeed;
 }
 
+// Mulberry32 source: https://gist.github.com/tommyettinger/46a874533244883189143505d203312c
 __inline DWORD rng(void)
 {
 	DWORD z = (state += 0x6D2B79F5UL);
