@@ -3,6 +3,9 @@
 <br /> **Warning!, This repository is Malware!!!, I am not responsible for any damages caused by it!**
 <br /> **Also dont destroy other persons Computer!, Its crime, I am not responsible for what you do!**
 
+# Readme for skids
+<br /> **FOR THOSE SKIDDERS LIKE CLXCQ, AND MORE, PLEASE STOP YOUR ACTION, THAT LITERALLY RUINED YOURSELF, START LEARNING WITH IT.**
+
 # Rewrite version
 <br /> Updates:
 <br /> 1. Move the language from C to C++.
