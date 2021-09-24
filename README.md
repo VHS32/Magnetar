@@ -20,15 +20,3 @@
 <br /> 8. GDI messes and play noises sounds.
 <br /> 9. Crashing the system by calling emergency shutdown using `NtShutdownSystem` or BSOD by terminating critical process.
 <br /> 10. MBR.
-
-# Download and Source code
-<br /> Download: Deleted (for safety reasons).
-<br /> Source code: See above.
-
-# Requirements to compile
-<br /> 1. Visual Studio 2013 Professional.
-<br /> 2. NASM (cmd: `nasm -f bin MagnetarMBR.asm -o MagnetarMBR.bin`).
-<br /> 3. HxD Hex Editor (Use Export function, and then select C).
-<br /> 4. qemu (For testing MBR).
-<br /> 5. VM (For testing malware).
-<br /> Good luck!
