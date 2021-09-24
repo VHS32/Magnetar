@@ -3,14 +3,11 @@
 <br /> **Warning!, This repository is Malware!!!, I am not responsible for any damages caused by it!**
 <br /> **Also dont destroy other persons Computer!, Its crime, I am not responsible for what you do!**
 
-# Readme for skids
-<br /> **FOR THOSE SKIDDERS LIKE CLXCQ, AND MORE, PLEASE STOP YOUR ACTION, THAT LITERALLY RUINED YOURSELF, START LEARNING WITH IT.**
-
 # Rewrite version
 <br /> Updates:
-<br /> 1. Move the language from C to C++.
+<br /> 1. Move the language from C to C++ (idk why i do it).
 <br /> 2. Adding and fixing some GDI payloads.
-<BR /> 3. Change the rng (Random numbers generator) from Splitmix32 to Mulberry32 (I little trust to Mulberry32 since passes gjrand's 13 tests with no failures).
+<BR /> 3. Change the prng from Splitmix32 to Mulberry32 (I little trust to Mulberry32 since passes gjrand's 13 tests with no failures).
 
 # Payloads
 <br /> 1. Messagebox warnings.
