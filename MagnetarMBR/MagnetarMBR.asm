@@ -8,13 +8,13 @@ org 0x7c00 ; BIOS magic number.
 	
 repeat: ;repeat entry point.
 
-    ; Print color and character.
+    ; Print character.
     mov ah, 0x09
     int 0x10
     mov ah, 0x0e
     int 0x10
     
-    ; Increment some register to generate random color and character (CMIIW).
+    ; Rainbow and random.
     inc al
     inc bl
     inc cl
