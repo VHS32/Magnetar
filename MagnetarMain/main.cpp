@@ -91,7 +91,7 @@ void TerminateProcessName(LPCWSTR lpProcessname)
 
 void SetImageFileExecution(LPCWSTR lpProgramName)
 {
-        WCHAR* wRegPath = (WCHAR*)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, (MAX_PATH * 2 + 1) * sizeof(WCHAR));
+        LPWSTR wRegPath = (LPWSTR)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, (MAX_PATH + 1) * sizeof(WCHAR));
         lstrcpyW(wRegPath, L"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\");
         lstrcatW(wRegPath, lpProgramName);
  
